@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Condicionales</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="MyStyle.css">
+    </head>
+    
+    
+    
+    <body>
+        <!--Ejemplo if -->
+        <script>
+            var precioCoche=60000;
+            var dineroAhorrado=prompt("Introduce dinero ahorrado: ");
+            
+            if(dineroAhorrado >= precioCoche){
+                alert("Puedes comprar el coche");
+            }else{
+                alert("No puedes comprar el carro...");
+            }
+            alert("Continuamos con la ejecucion del programa...");
+        </script>
+        
+        
+        
+        <!--Calculadora muy Sencilla-->
+        <script>
+            alert("Calculadora");
+            var numero1=prompt("Numero1: ");        
+            var numero2=prompt("Numero2: ");
+            
+            numero1 = parseInt(numero1);
+            numero2 = parseInt(numero2);
+           /*
+            alert(numero1 + " " + typeof(numero1));
+            alert(numero2 + " " + typeof(numero2));
+            */
+           
+            /*La instruccion isNaN pregunta si no es un Numero el dato introducido para validar lo que introdujo el user*/
+            if(isNaN(numero1) || isNaN(numero2)){
+                alert("No son numeros...");
+            }else{
+                var opcion=prompt("1.-Suma.\n2.-Resta.\n3.-Multiplicacion.\n4.-Division.\n");
+            }
+        
+            
+            if(opcion==1){
+                var res = parseInt(numero1) + parseInt(numero2);  
+                alert("El resultado es: " + res);
+            }
+            if(opcion==2){
+                var res= (numero1-numero2);  
+                alert("El resultado es: " + res);
+            }
+            if(opcion==3){
+                alert("El resultado es: " + (parseInt(numero1) * parseInt(numero2)));
+            }
+            if(opcion==4){
+                var res= (numero1 / numero2);  
+                alert("El resultado es: " + res);
+            }
+        </script>
+        
+        
+        
+        <!--Bucles-->
+        <script>
+            var meses=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", 
+                            "Noviembre", "Diciembre"];
+            /*Impresion de todos los elementos del arreglo*/
+            var contador = 0;
+            while(contador < meses.length){
+                document.write(meses[contador] + "<br>");
+                contador++;
+            }
+        </script>
+        
+        
+        
+        <!--Variables para contenedor-->
+        <script>
+            var nombre, edad, poblacion;
+            nombre=prompt("Nombre:", "Escribe Nombre aqui...");
+            /*Validamos que se ingrese un nombre y no un numero*/
+            while(!isNaN(nombre)){
+                nombre=prompt("Ingresa un nombre valido:", "Escribe Nombre aqui...");
+            }
+            
+            edad=prompt("Edad:", "Escribe Edad aqui...");
+            
+            /*While para validar que la edad sea correcta*/
+            /*Se esta repitiendo el While hasta que se escriba una edad que no este en estos parametros*/
+            while(edad<=0 || edad>105 || isNaN(edad)){
+                edad=prompt("Introduce una edad valida:", "Escribe Edad aqui...");
+            }
+            /* ***************************************** */
+            
+            /*Validamos que se ingrese poblacion y no un numero*/
+            poblacion=prompt("Poblacion: ", "Escribe Poblacion aqui...");
+            while(!isNaN(poblacion)){
+                poblacion=prompt("Ingresa Poblacion valida:", "Escribe Poblacion aqui...");
+            }
+        </script> 
+        
+                
+        
+        <!--Contenedor: Se presentan aqui las variables-->
+        <div id="contenedor">
+            <p>Nombre: 
+                <script>document.write(nombre);</script></p>
+            <p>Edad:
+                <script>document.write(edad);</script></p>
+            <p>Poblacion:
+                <script>document.write(poblacion);</script></p>    
+        </div>
+        
+        
+        
+        <!---Funcionamiento basico del Bucle for-->
+        <script>
+            for(var i=0; i<10; i++){
+                alert("Holas "+ i);
+            }
+        </script>
+        
+        
+        
+        <!--Como presentar un arreglo de Strings mediante un bucle for-->
+        <script>
+        var meses=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", 
+                    "Noviembre", "Diciembre"];
+                
+        document.write("<br>" + "Todos los meses mediante un for: " + "<br>");    
+        for(var i=0; i<meses.length; i++){
+            document.write(meses[i] + " " + "<br>");
+        }          
+        </script>
+        
+        
+        
+        <!--Crea un arreglo, pregunta al usuario cuantos datos se guardaran, los guarda en bucle for, los presenta
+            mediante bucle for-->
+        <script>
+            document.write("<br>");
+            var cantidad_datos=prompt("¿Cuantos datos vas a guardar?");
+            cantidad_datos = parseInt(cantidad_datos);
+            alert("Guardaras " + cantidad_datos + " datos");
+            
+            var datosArray = new Array();  /*Declaracion del arreglo*/
+            
+            
+            for(var i=0; i<cantidad_datos; i++){
+                var dato = prompt("Inserta Dato: " + (i+1));
+                datosArray[i] = dato;
+            }
+            
+            alert("Datos guardados");
+            document.write("<br>");
+            document.write("Datos del Arreglo:");
+            document.write("<br>");
+            
+            for(var i=0; i<cantidad_datos; i++){
+                document.write(datosArray[i] + "<br>");
+            }
+        </script>
+    </body>
+</html>

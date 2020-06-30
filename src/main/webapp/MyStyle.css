@@ -1,0 +1,12 @@
+#contenedor{
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 30%; 
+    height: 2em;
+    font-weight: bold;
+    width: 25%;
+    background-color: white;
+    margin: auto;
+    padding: 15px;
+}
